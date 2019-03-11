@@ -1,0 +1,23 @@
+<%include ./partials/header %>
+
+<div class="ui main text container segment">
+  <div class="ui huge header"><%= news.title %></div>
+  <div class="ui top atached>
+    <div class="item">
+      <img class="ui centered rounded image" src="<%= news.image %>" />
+      <div class="content">
+        <span> <%= news.created.toDateString() %> </span>
+      </div>
+      <div class="description">
+        <p><%= news.body %></p>
+      </div>
+      <a class="ui grey button" href="/news/<%= news._id %>/edit">Edit News Post</a>
+      <form id="delete" action="/news/<%= news._id %>?_method=DELETE" method="POST">
+<button class="ui brown button">Delete News</button>
+
+
+      </form>
+    </div>
+  </div>
+</div>
+<%include ./partials/footer %>
